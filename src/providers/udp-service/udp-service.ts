@@ -46,6 +46,13 @@ export class UdpServiceProvider {
     console.log("Connect seccess!");
     this.socketId = createInfo.socketId;
     chrome.sockets.udp.bind(createInfo.socketId, "0.0.0.0", 0, (result) => this.onBindComplete(result));
+    chrome.sockets.udp.onReceive.addListener((info) => this.onReceive(info));
+  }
+
+  onReceive(info) {
+    console.log(JSON.stringify(info));
+
+    console.log(this.arrayBuffer2str(info.data));
   }
 
   onBindComplete(result) {
@@ -82,6 +89,8 @@ export class UdpServiceProvider {
     }
     return buf;
   }
+
+  
 
   onSendCallback(sendInfo) {
     console.log(JSON.stringify(sendInfo));
