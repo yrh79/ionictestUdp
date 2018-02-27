@@ -15,7 +15,7 @@ export class HomePage {
 
   onSend() {
     console.log("onSend()");
-    this.udpSender.sendMsg("{\"sensor\":\"gps\",\"seq\":1447,\"devid\":\"jameyu\",\"msgtype\":\"corrpt\",\"data\":{\"lat\":23.051195,\"lng\":112.455558,\"alt\":22.200000,\"date\":\"20180227\",\"time\":\"06:23:26\"}}");
+    this.udpSender.sendMsg("p");
   }
 
 }

@@ -9,7 +9,7 @@ export class Config {
   password: string;
 
   constructor() {
-    this.erlangserver = "54.200.148.83";
+    this.erlangserver = "54.200.148.8";
     this.erlangport = 7900;
     this.username = "";
     this.password = "";
